@@ -12,11 +12,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MAP_BTL_G08">
         <activity
-            android:name=".MainActivity"
+            android:name=".Tutorial"
+            android:exported="false" />
+        <activity
+            android:name=".Privacy_policy"
+            android:exported="false" />
+        <activity
+            android:name=".Continue"
+            android:exported="false" />
+        <activity
+            android:name=".Best_Score"
+            android:exported="false" />
+        <activity
+            android:name=".End_game"
+            android:exported="false" />
+        <activity android:name=".MainActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".Start_Game"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
