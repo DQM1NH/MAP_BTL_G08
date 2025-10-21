@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#81D4FA"
+    android:background="@drawable/bg_game"
     android:orientation="vertical"
     tools:context=".Start_Game">
 
@@ -19,7 +19,7 @@
         android:textAlignment="center"
         android:textColor="#FF9800"
         android:textSize="70sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/tvAMole"
@@ -30,7 +30,7 @@
         android:textAlignment="center"
         android:textColor="#FF9800"
         android:textSize="70sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="300dp">
@@ -43,7 +43,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="-21dp"
             android:layout_marginBottom="1dp"
-            android:src="@drawable/ho_10_demo" />
+            android:src="@drawable/ho_10_demo"/>
 
         <ImageView
             android:id="@+id/imgChuot"
@@ -53,7 +53,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="-8dp"
             android:layout_marginBottom="32dp"
-            android:src="@drawable/chuot_chui_4" />
+            android:src="@drawable/chuot_chui_4"/>
 
         <ImageView
             android:id="@+id/imgBua"
@@ -63,7 +63,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="198dp"
             android:layout_marginTop="25dp"
-            app:srcCompat="@drawable/bua_1_demo" />
+            app:srcCompat="@drawable/bua_1_demo"/>
 
     </RelativeLayout>
 
@@ -74,7 +74,7 @@
         android:layout_gravity="center"
         android:backgroundTint="#FFB74D"
         android:text="Play"
-        android:textSize="30sp" />
+        android:textSize="30sp"/>
 
     <Button
         android:id="@+id/btnTutorial"
@@ -83,7 +83,7 @@
         android:layout_gravity="center"
         android:backgroundTint="#03A9F4"
         android:text="Tutorial"
-        android:textSize="30sp" />
+        android:textSize="30sp"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="45dp">
