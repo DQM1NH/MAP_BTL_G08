@@ -1,6 +1,10 @@
 package com.example.map_btl_g08;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,16 +13,46 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Start_Game extends AppCompatActivity {
-
+    Button btnPlay;
+    Button btnTutorial;
+    TextView tvPrivacy;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_start_game);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        // anh xa id
+        btnPlay = findViewById(R.id.btnPlay);
+        btnTutorial = findViewById(R.id.btnTutorial);
+        tvPrivacy = findViewById(R.id.tvPricacy);
+        // Xu ly su kien cho button
+        btnPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Khai bao inntent
+//                Intent myIntent = new Intent(Start_Game.this, PlayActivity.class);
+                // Khoi dong
+//                startActivity(myIntent);
+            }
+        });
+
+        btnTutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Khai bao Intent
+                Intent myTutorial = new Intent(Start_Game.this, Tutorial.class);
+                // Khoi dong
+                startActivity(myTutorial);
+            }
+        });
+
+        tvPrivacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Khai bao Intent
+                Intent myPrivacy = new Intent(Start_Game.this, Privacy_policy.class);
+                // Khoi dong
+                startActivity(myPrivacy);
+            }
         });
     }
 }
