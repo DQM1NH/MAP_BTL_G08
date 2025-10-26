@@ -22,9 +22,9 @@ public class End_game extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Khai bao inntent
-//                Intent myIntent = new Intent(End_Game.this, PlayActivity.class);
+                Intent myIntent = new Intent(End_game.this, PlayActivity.class);
                 // Khoi dong
-//                startActivity(myIntent);
+                startActivity(myIntent);
             }
         });
     }

@@ -24,9 +24,9 @@ public class Continue extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                // Khai bao Intent
-//                Intent myIntent_Yes = new Intent(Continue.this, PlayActivity.class);
+                Intent myIntent_Yes = new Intent(Continue.this, PlayActivity.class);
 //                // Khoi dong
-//                startActivity(myIntent_Yes);
+                startActivity(myIntent_Yes);
             }
         });
 

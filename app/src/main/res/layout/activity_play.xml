@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PlayActivity"
+    tools:visibility="visible">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/background" />
+
+    <ImageView
+        android:id="@+id/btnSettings"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="top|end"
+        android:layout_margin="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:contentDescription="Cài đặt"
+        android:focusable="true"
+        android:padding="8dp"
+        app:srcCompat="@drawable/ic_gear" />
+
+
+    <!-- Hàng Trên -->
+    <ImageView
+        android:id="@+id/imgclock"
+        android:layout_width="66dp"
+        android:layout_height="62dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@drawable/ic_clock" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="80dp"
+        android:text="60s"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="150dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <!-- Lỗ 1 + Chuột -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="166dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imageViewTop1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_hole" />
+
+            <ImageView
+                android:id="@+id/moleTop1"
+                android:layout_width="194dp"
+                android:layout_height="137dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-5dp"
+                android:src="@drawable/ic_mole"
+                android:visibility="visible" />
+        </FrameLayout>
+
+        <!-- Lỗ 2 + Chuột -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="166dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imageViewTop2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_hole" />
+
+            <ImageView
+                android:id="@+id/moleTop2"
+                android:layout_width="194dp"
+                android:layout_height="137dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-5dp"
+                android:src="@drawable/ic_mole"
+                android:visibility="visible" />
+        </FrameLayout>
+
+        <!-- Lỗ 3 + Chuột -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="166dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imageViewTop3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_hole" />
+
+            <ImageView
+                android:id="@+id/moleTop3"
+                android:layout_width="194dp"
+                android:layout_height="137dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-5dp"
+                android:src="@drawable/ic_mole"
+                android:visibility="visible" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!-- Hàng Giữa -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="268dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="250dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <!-- Lỗ 1 + Chuột -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="268dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imageViewBelow1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_hole" />
+
+            <ImageView
+                android:id="@+id/moleBelow1"
+                android:layout_width="194dp"
+                android:layout_height="137dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-5dp"
+                android:src="@drawable/ic_mole"
+                android:visibility="visible" />
+        </FrameLayout>
+
+        <!-- Lỗ 2 + Chuột -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="268dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imageViewBelow2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_hole" />
+
+            <ImageView
+                android:id="@+id/moleBelow2"
+                android:layout_width="194dp"
+                android:layout_height="137dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-5dp"
+                android:src="@drawable/ic_mole"
+                android:visibility="visible" />
+        </FrameLayout>
+
+        <!-- Lỗ 3 + Chuột -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="268dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imageViewBelow3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_hole" />
+
+            <ImageView
+                android:id="@+id/moleBelow3"
+                android:layout_width="194dp"
+                android:layout_height="137dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-5dp"
+                android:src="@drawable/ic_mole"
+                android:visibility="visible" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Hàng Dưới -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="400dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <!-- Lỗ 1 + Chuột -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="306dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imageViewBottom1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_hole" />
+
+            <ImageView
+                android:id="@+id/moleBottom1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_mole"
+                android:visibility="invisible" />
+        </FrameLayout>
+
+        <!-- Lỗ 2 + Chuột -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="306dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imageViewBottom2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_hole" />
+
+            <ImageView
+                android:id="@+id/moleBottom2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_mole"
+                android:visibility="invisible" />
+        </FrameLayout>
+
+        <!-- Lỗ 3 + Chuột + Búa -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="306dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imageViewBottom3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_hole" />
+
+            <ImageView
+                android:id="@+id/moleBottom3"
+                android:layout_width="194dp"
+                android:layout_height="137dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-5dp"
+                android:src="@drawable/ic_mole"
+                android:visibility="visible"/>
+
+            <ImageView
+                android:id="@+id/hammerBottom3"
+                android:layout_width="93dp"
+                android:layout_height="223dp"
+                android:layout_marginLeft="45dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/ic_hammer"
+                android:visibility="visible" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

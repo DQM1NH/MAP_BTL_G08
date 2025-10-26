@@ -28,10 +28,10 @@ public class Start_Game extends AppCompatActivity {
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Khai bao inntent
-//                Intent myIntent = new Intent(Start_Game.this, PlayActivity.class);
+                //Khai bao inntent
+                Intent myIntent = new Intent(Start_Game.this, PlayActivity.class);
                 // Khoi dong
-//                startActivity(myIntent);
+                startActivity(myIntent);
             }
         });
 
