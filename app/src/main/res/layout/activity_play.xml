@@ -42,7 +42,7 @@
         app:srcCompat="@drawable/ic_clock" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|center_horizontal"
@@ -50,6 +50,15 @@
         android:text="60s"
         android:textSize="20sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="0"
+        android:textSize="30dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -69,7 +78,7 @@
             <ImageView
                 android:id="@+id/imageViewTop1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:src="@drawable/ic_hole" />
 
             <ImageView
@@ -92,7 +101,7 @@
             <ImageView
                 android:id="@+id/imageViewTop2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:src="@drawable/ic_hole" />
 
             <ImageView
@@ -115,7 +124,7 @@
             <ImageView
                 android:id="@+id/imageViewTop3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:src="@drawable/ic_hole" />
 
             <ImageView
@@ -150,7 +159,7 @@
             <ImageView
                 android:id="@+id/imageViewBelow1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:src="@drawable/ic_hole" />
 
             <ImageView
@@ -167,13 +176,13 @@
         <!-- Lỗ 2 + Chuột -->
         <FrameLayout
             android:layout_width="0dp"
-            android:layout_height="268dp"
+            android:layout_height="248dp"
             android:layout_weight="1">
 
             <ImageView
                 android:id="@+id/imageViewBelow2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:src="@drawable/ic_hole" />
 
             <ImageView
@@ -196,7 +205,7 @@
             <ImageView
                 android:id="@+id/imageViewBelow3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:src="@drawable/ic_hole" />
 
             <ImageView
@@ -230,13 +239,13 @@
             <ImageView
                 android:id="@+id/imageViewBottom1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:src="@drawable/ic_hole" />
 
             <ImageView
                 android:id="@+id/moleBottom1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_mole"
                 android:visibility="invisible" />
@@ -251,13 +260,13 @@
             <ImageView
                 android:id="@+id/imageViewBottom2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:src="@drawable/ic_hole" />
 
             <ImageView
                 android:id="@+id/moleBottom2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_mole"
                 android:visibility="invisible" />
@@ -272,7 +281,7 @@
             <ImageView
                 android:id="@+id/imageViewBottom3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:src="@drawable/ic_hole" />
 
             <ImageView
@@ -296,4 +305,5 @@
                 android:visibility="visible" />
         </FrameLayout>
     </LinearLayout>
+
 </FrameLayout>
