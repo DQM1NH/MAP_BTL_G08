@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <ImageView
+            android:id="@+id/img_stop"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/tamdung"/>
@@ -17,12 +18,14 @@
 
 
         <ImageView
+            android:id="@+id/img_loa"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="220dp"
             android:src="@drawable/loa"/>
 
         <ImageView
+            android:id="@+id/img_x"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/x"/>
@@ -55,6 +58,7 @@
                 android:textAllCaps="true" />
 
             <TextView
+                android:id="@+id/txt_highscore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12000"
@@ -82,6 +86,7 @@
                 android:textAllCaps="true" />
 
             <TextView
+                android:id="@+id/txt_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1:30"
@@ -109,6 +114,7 @@
             android:textSize="30sp" />
 
         <TextView
+            android:id="@+id/txt_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"

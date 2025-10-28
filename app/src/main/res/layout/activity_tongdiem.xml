@@ -9,6 +9,7 @@
 
     <!-- Tên game -->
     <ImageView
+        android:id="@+id/img_home"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="left"
@@ -50,6 +51,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/txt_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Score: 7000"
@@ -57,6 +59,7 @@
                 android:textSize="30sp" />
 
             <TextView
+                android:id="@+id/txt_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -94,6 +97,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/txt_highscore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="High Score : 12000"
@@ -101,6 +105,7 @@
                 android:textColor="#000000" />
 
             <TextView
+               android:id="@+id/txt_timehighscore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Time: 1:30"
@@ -121,6 +126,7 @@
 
         <!-- Nút Start Game -->
         <Button
+            android:id="@+id/btn_td_stargame"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:background="@drawable/bgbutton"
@@ -129,6 +135,7 @@
 
 
         <Button
+            android:id="@+id/btn_option"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:background="@drawable/bgbutton"
@@ -137,6 +144,7 @@
 
 
         <Button
+            android:id="@+id/btn_quit"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:background="@drawable/bgbutton"

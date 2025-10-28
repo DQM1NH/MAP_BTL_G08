@@ -21,27 +21,30 @@ public class PlayActivity extends AppCompatActivity {
     ImageView[] moles;
     TextView tvScore;
     TextView tvTimer;
-    Button startBtn;
+    ImageView btnSettings; // Sử dụng ImageView từ layout
     int score = 0;
     int currentMole = -1;
     Handler handler = new Handler();
     private Runnable moleRunnable;
 
-    long gameDurationMs = 60000;   // 30s
-    long initialInterval = 800;    // tốc độ ban đầu (ms)
-    long minInterval = 300;        // nhanh nhất
+    long gameDurationMs = 20000;
+    long initialInterval = 800;
+    long minInterval = 300;
     long moleInterval = initialInterval;
 
     CountDownTimer countDownTimer;
     boolean isPlaying = false;
     private Random random = new Random();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
-        // Anh xa id
+
+        // Ánh xạ id - SỬA LỖI
         tvScore = findViewById(R.id.tvScore);
         tvTimer = findViewById(R.id.tvTimer);
+        btnSettings = findViewById(R.id.btnSettings); // Ánh xạ ImageView settings
 
         moles = new ImageView[]{
                 findViewById(R.id.moleTop1),
@@ -55,7 +58,7 @@ public class PlayActivity extends AppCompatActivity {
                 findViewById(R.id.moleBottom3)
         };
 
-        // Gan su kien click cho tung mole
+        // Gán sự kiện click cho từng mole
         for (int i = 0; i < moles.length; i++) {
             int index = i;
             moles[i].setOnClickListener(v -> {
@@ -68,7 +71,8 @@ public class PlayActivity extends AppCompatActivity {
             });
         }
 
-        startBtn.setOnClickListener(new View.OnClickListener() {
+        // Sử dụng ImageView settings làm nút start/stop - SỬA LỖI
+        btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!isPlaying) startGame();
@@ -79,6 +83,7 @@ public class PlayActivity extends AppCompatActivity {
         updateScore();
         tvTimer.setText((gameDurationMs / 1000) + "s");
     }
+
     public void startGame() {
         score = 0;
         updateScore();
@@ -178,9 +183,8 @@ public class PlayActivity extends AppCompatActivity {
     }
 
     public void updateScore() {
-        tvScore.setText(score);
+        tvScore.setText(String.valueOf(score)); // SỬA LỖI: chuyển sang String
     }
-
     public void showGameOverDialog() {
         // Khai bao Intent
         Intent callContinue = new Intent(PlayActivity.this, Continue.class);
