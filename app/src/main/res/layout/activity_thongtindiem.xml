@@ -29,12 +29,7 @@
         android:layout_gravity="top|right" />
 
     <!-- Icon x - góc phải trên, cách lề phải 100dp -->
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/x"
-        android:layout_marginRight="100dp"
-        android:layout_gravity="top|right" />
+
 
     <!-- Tiêu đề game -->
     <TextView

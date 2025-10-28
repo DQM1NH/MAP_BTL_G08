@@ -35,6 +35,8 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+        <activity android:name=".Thongtin_Score" />
+        <activity android:name=".Tinhdiem_Score"/>
         <activity
             android:name=".Start_Game"
             android:exported="true">

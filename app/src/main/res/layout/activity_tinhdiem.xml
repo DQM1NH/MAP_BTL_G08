@@ -132,7 +132,246 @@
         android:layout_marginBottom="20dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:orientation="vertical"/>
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="149dp"
+            android:layout_gravity="top|center_horizontal"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <!-- Ô 1 -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imageViewTop1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_hole" />
+
+                <ImageView
+                    android:id="@+id/moleTop1"
+                    android:layout_width="194dp"
+                    android:layout_height="137dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:src="@drawable/ic_mole"
+                    android:visibility="visible" />
+            </FrameLayout>
+
+            <!-- Ô 2 -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imageViewTop2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_hole"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/moleTop2"
+                    android:layout_width="194dp"
+                    android:layout_height="137dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:src="@drawable/ic_mole"
+                    android:visibility="visible" />
+            </FrameLayout>
+
+            <!-- Ô 3 -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imageViewTop3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_hole" />
+
+                <ImageView
+                    android:id="@+id/moleTop3"
+                    android:layout_width="194dp"
+                    android:layout_height="137dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:src="@drawable/ic_mole"
+                    android:visibility="visible" />
+            </FrameLayout>
+        </LinearLayout>
+
+       <!--hàng 2-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="268dp"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="-70dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <!-- Ô 1 -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imageViewBelow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_hole" />
+
+                <ImageView
+                    android:id="@+id/moleBelow1"
+                    android:layout_width="194dp"
+                    android:layout_height="137dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:src="@drawable/ic_mole"
+                    android:visibility="visible"/>
+            </FrameLayout>
+
+            <!-- Ô 2 -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imageViewBelow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_hole" />
+
+                <ImageView
+                    android:id="@+id/moleBelow2"
+                    android:layout_width="194dp"
+                    android:layout_height="137dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:src="@drawable/ic_mole"
+                    android:visibility="visible"/>
+            </FrameLayout>
+
+            <!-- Ô 3 -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imageViewBelow3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_hole" />
+
+                <ImageView
+                    android:id="@+id/moleBelow3"
+                    android:layout_width="194dp"
+                    android:layout_height="137dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:src="@drawable/ic_mole"
+                    android:visibility="visible"/>
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="-50dp"
+            android:layout_gravity="top|center_horizontal"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <!-- Ô 1 -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imageViewBottom1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_hole" />
+
+                <ImageView
+                    android:id="@+id/moleBottom1"
+                    android:layout_width="194dp"
+                    android:layout_height="137dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:src="@drawable/ic_mole"
+                    android:visibility="visible" />
+            </FrameLayout>
+
+            <!-- Ô 2 -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imageViewBottom2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_hole" />
+
+                <ImageView
+                    android:id="@+id/moleBottom2"
+                    android:layout_width="194dp"
+                    android:layout_height="137dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:src="@drawable/ic_mole"
+                    android:visibility="visible" />
+            </FrameLayout>
+
+            <!-- Ô 3 (Đã xóa búa) -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imageViewBottom3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_hole" />
+
+                <ImageView
+                    android:id="@+id/moleBottom3"
+                    android:layout_width="194dp"
+                    android:layout_height="137dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:src="@drawable/ic_mole"
+                    android:visibility="visible" />
+            </FrameLayout>
+        </LinearLayout>
+
+    </LinearLayout>
 
     <!-- Phần dưới: Target -->
 
