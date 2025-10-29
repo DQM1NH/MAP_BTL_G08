@@ -70,11 +70,19 @@
     <Button
         android:id="@+id/btnPlay"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_height="54dp"
         android:layout_gravity="center"
         android:backgroundTint="#FFB74D"
         android:text="Play"
-        android:textSize="30sp"/>
+        android:textSize="30sp" />
+    <Button
+        android:id="@+id/btn_Score"
+        android:layout_width="250dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#764133"
+        android:text="SCORE "
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/btnTutorial"

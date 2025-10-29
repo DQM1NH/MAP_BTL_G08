@@ -14,6 +14,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Start_Game extends AppCompatActivity {
     Button btnPlay;
+
+    Button btnScore;
     Button btnTutorial;
     TextView tvPrivacy;
     @Override
@@ -22,6 +24,7 @@ public class Start_Game extends AppCompatActivity {
         setContentView(R.layout.activity_start_game);
         // anh xa id
         btnPlay = findViewById(R.id.btnPlay);
+        btnScore = findViewById(R.id.btn_Score); //them btn_Score
         btnTutorial = findViewById(R.id.btnTutorial);
         tvPrivacy = findViewById(R.id.tvPricacy);
         // Xu ly su kien cho button
@@ -32,6 +35,16 @@ public class Start_Game extends AppCompatActivity {
                 Intent callStart = new Intent(Start_Game.this, PlayActivity.class);
                 // Khoi dong
                 startActivity(callStart);
+            }
+        });
+
+        btnScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Khai bao Intent chuyen den activity_thongtindiem
+                Intent myScore = new Intent(Start_Game.this, Thongtin_Score.class);
+                // Khoi dong
+                startActivity(myScore);
             }
         });
 
