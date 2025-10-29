@@ -38,8 +38,8 @@
         android:textColor="#FFC107"
         android:textStyle="bold"/>
 
-    <EditText
-        android:id="@+id/edtScore"
+    <TextView
+        android:id="@+id/tvScore_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -60,8 +60,8 @@
         android:layout_gravity="center"
         android:textColor="#FFC107"
         android:textStyle="bold"/>
-    <EditText
-        android:id="@+id/edtBestScore"
+    <TextView
+        android:id="@+id/tvBestScore_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"

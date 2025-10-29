@@ -24,9 +24,8 @@
         android:layout_height="50dp"
         android:layout_gravity="top|end"
         android:layout_margin="16dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
+        android:background="@drawable/ic_gear"
         android:clickable="true"
-        android:contentDescription="Cài đặt"
         android:focusable="true"
         android:padding="8dp"
         app:srcCompat="@drawable/ic_gear" />
@@ -56,9 +55,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:text="0"
-        android:textSize="30dp" />
+        android:textSize="30sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,7 +66,8 @@
         android:layout_marginTop="150dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:weightSum="3">
+        android:weightSum="3"
+        android:baselineAligned="false">
 
         <!-- Lỗ 1 + Chuột -->
         <FrameLayout
@@ -86,10 +86,10 @@
                 android:layout_width="194dp"
                 android:layout_height="137dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="-5dp"
                 android:src="@drawable/ic_mole"
-                android:visibility="visible" />
+                android:visibility="invisible" />
         </FrameLayout>
 
         <!-- Lỗ 2 + Chuột -->
@@ -109,10 +109,10 @@
                 android:layout_width="194dp"
                 android:layout_height="137dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="-5dp"
                 android:src="@drawable/ic_mole"
-                android:visibility="visible" />
+                android:visibility="invisible" />
         </FrameLayout>
 
         <!-- Lỗ 3 + Chuột -->
@@ -132,10 +132,10 @@
                 android:layout_width="194dp"
                 android:layout_height="137dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="-5dp"
                 android:src="@drawable/ic_mole"
-                android:visibility="visible" />
+                android:visibility="invisible" />
         </FrameLayout>
 
     </LinearLayout>
@@ -148,7 +148,8 @@
         android:layout_marginTop="250dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:weightSum="3">
+        android:weightSum="3"
+        android:baselineAligned="false">
 
         <!-- Lỗ 1 + Chuột -->
         <FrameLayout
@@ -167,10 +168,10 @@
                 android:layout_width="194dp"
                 android:layout_height="137dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="-5dp"
                 android:src="@drawable/ic_mole"
-                android:visibility="visible" />
+                android:visibility="invisible" />
         </FrameLayout>
 
         <!-- Lỗ 2 + Chuột -->
@@ -190,10 +191,10 @@
                 android:layout_width="194dp"
                 android:layout_height="137dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="-5dp"
                 android:src="@drawable/ic_mole"
-                android:visibility="visible" />
+                android:visibility="invisible" />
         </FrameLayout>
 
         <!-- Lỗ 3 + Chuột -->
@@ -213,10 +214,10 @@
                 android:layout_width="194dp"
                 android:layout_height="137dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="-5dp"
                 android:src="@drawable/ic_mole"
-                android:visibility="visible" />
+                android:visibility="invisible" />
         </FrameLayout>
     </LinearLayout>
 
@@ -228,7 +229,8 @@
         android:layout_marginTop="400dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:weightSum="3">
+        android:weightSum="3"
+        android:baselineAligned="false">
 
         <!-- Lỗ 1 + Chuột -->
         <FrameLayout
@@ -244,11 +246,13 @@
 
             <ImageView
                 android:id="@+id/moleBottom1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="194dp"
+                android:layout_height="137dp"
                 android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="-5dp"
                 android:src="@drawable/ic_mole"
-                android:visibility="invisible" />
+                android:visibility="invisible"/>
         </FrameLayout>
 
         <!-- Lỗ 2 + Chuột -->
@@ -259,17 +263,19 @@
 
             <ImageView
                 android:id="@+id/imageViewBottom2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_hole" />
 
             <ImageView
                 android:id="@+id/moleBottom2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="194dp"
+                android:layout_height="137dp"
                 android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="-5dp"
                 android:src="@drawable/ic_mole"
-                android:visibility="invisible" />
+                android:visibility="invisible"/>
         </FrameLayout>
 
         <!-- Lỗ 3 + Chuột + Búa -->
@@ -289,21 +295,22 @@
                 android:layout_width="194dp"
                 android:layout_height="137dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="-5dp"
                 android:src="@drawable/ic_mole"
-                android:visibility="visible"/>
+                android:visibility="invisible"/>
 
             <ImageView
                 android:id="@+id/hammerBottom3"
                 android:layout_width="93dp"
                 android:layout_height="223dp"
-                android:layout_marginLeft="45dp"
+                android:layout_marginStart="45dp"
                 android:layout_gravity="center_horizontal|top"
                 android:layout_marginTop="1dp"
                 android:src="@drawable/ic_hammer"
-                android:visibility="visible" />
+                android:visibility="invisible"/>
         </FrameLayout>
     </LinearLayout>
+
 
 </FrameLayout>

@@ -12,9 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MAP_BTL_G08">
         <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
-        <activity
             android:name=".PlayActivity"
             android:exported="false" />
         <activity
@@ -31,9 +28,6 @@
             android:exported="false" />
         <activity
             android:name=".End_game"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".Start_Game"

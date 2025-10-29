@@ -21,15 +21,14 @@ public class PlayActivity extends AppCompatActivity {
     ImageView[] moles;
     TextView tvScore;
     TextView tvTimer;
-    Button startBtn;
+//    Button startBtn;
     int score = 0;
     int currentMole = -1;
     Handler handler = new Handler();
     private Runnable moleRunnable;
 
-    long gameDurationMs = 60000;   // 30s
-    long initialInterval = 800;    // tốc độ ban đầu (ms)
-    long minInterval = 300;        // nhanh nhất
+    long gameDurationMs = 60000;   // 60s
+    long initialInterval = 1500;    // tốc độ ban đầu (ms)
     long moleInterval = initialInterval;
 
     CountDownTimer countDownTimer;
@@ -42,6 +41,7 @@ public class PlayActivity extends AppCompatActivity {
         // Anh xa id
         tvScore = findViewById(R.id.tvScore);
         tvTimer = findViewById(R.id.tvTimer);
+
 
         moles = new ImageView[]{
                 findViewById(R.id.moleTop1),
@@ -68,15 +68,8 @@ public class PlayActivity extends AppCompatActivity {
             });
         }
 
-        startBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!isPlaying) startGame();
-                else stopGame();
-            }
-        });
-
         updateScore();
+        startGame();
         tvTimer.setText((gameDurationMs / 1000) + "s");
     }
     public void startGame() {
@@ -156,7 +149,7 @@ public class PlayActivity extends AppCompatActivity {
                 hideMole(idx);
                 currentMole = -1;
             }
-        }, Math.max(moleInterval / 2, 300));
+        }, Math.max(moleInterval / 2, 1000));
     }
 
     public void hideMole(int idx) {
@@ -178,12 +171,21 @@ public class PlayActivity extends AppCompatActivity {
     }
 
     public void updateScore() {
-        tvScore.setText(score);
+
+        tvScore.setText(String.valueOf(score));
     }
 
     public void showGameOverDialog() {
         // Khai bao Intent
         Intent callContinue = new Intent(PlayActivity.this, Continue.class);
+        // lay du lieu score
+        int score = Integer.parseInt(tvScore.getText().toString());
+        // Dong goi du lieu vao Bundle
+        Bundle myscore = new Bundle();
+        // Dua du lieu vaom Bundle
+        myscore.putInt("score", score);
+        // Dua bundle vao Intent
+        callContinue.putExtra("mypackage", myscore);
         // Khoi dong
         startActivity(callContinue);
     }
