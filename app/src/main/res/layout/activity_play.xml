@@ -47,6 +47,7 @@
         android:layout_gravity="top|center_horizontal"
         android:layout_marginTop="80dp"
         android:text="60s"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -57,6 +58,7 @@
         android:paddingTop="16dp"
         android:layout_marginStart="16dp"
         android:text="0"
+        android:textColor="@color/black"
         android:textSize="30sp" />
 
     <LinearLayout

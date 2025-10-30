@@ -43,7 +43,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="-21dp"
             android:layout_marginBottom="1dp"
-            android:src="@drawable/ho_10_demo"/>
+            android:src="@drawable/ic_hole"/>
 
         <ImageView
             android:id="@+id/imgChuot"
@@ -53,7 +53,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="-8dp"
             android:layout_marginBottom="32dp"
-            android:src="@drawable/chuot_chui_4"/>
+            android:src="@drawable/ic_mole"/>
 
         <ImageView
             android:id="@+id/imgBua"
@@ -63,7 +63,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="198dp"
             android:layout_marginTop="25dp"
-            app:srcCompat="@drawable/bua_1_demo"/>
+            app:srcCompat="@drawable/ic_hammer"/>
 
     </RelativeLayout>
 
