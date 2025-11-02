@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">MAP_BTL_G08</string>
     <string name="text_underlined"><u>Privacy Policy</u></string>
+    <string name="text_privacy">
+    Chính sách quyền riêng tư
+Ứng dụng Whack-a-Mole tôn trọng quyền riêng tư của bạn.
+Ứng dụng không thu thập, lưu trữ hoặc chia sẻ bất kỳ thông tin cá nhân nào của người dùng.
+Ứng dụng không yêu cầu đăng nhập, không theo dõi vị trí, và không truy cập danh bạ hay bộ nhớ.
+Dữ liệu điểm số và tiến trình chơi chỉ được lưu trực tiếp trên thiết bị của bạn (local storage).
+Ứng dụng không sử dụng dịch vụ phân tích hay quảng cáo của bên thứ ba.
+
+Nếu bạn có thắc mắc về quyền riêng tư, vui lòng liên hệ qua email: 📧 mdang9531@gmail.com
+
+Cập nhật lần cuối: 02/11/2025
+</string>
 </resources>
