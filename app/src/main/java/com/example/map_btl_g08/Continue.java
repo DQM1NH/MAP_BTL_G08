@@ -36,8 +36,13 @@ public class Continue extends AppCompatActivity {
             public void onClick(View v) {
                 // Khai bao Intent
                 Intent myIntent_Yes = new Intent(Continue.this, PlayActivity.class);
+                // Truyen lai diem vao PlayActivity
+                myIntent_Yes.putExtra("score_continue", score);
+                myIntent_Yes.putExtra("time_continue", 20000L);
+                myIntent_Yes.putExtra("is_continue", true);
                 // Khoi dong
                 startActivity(myIntent_Yes);
+                finish();
             }
         });
         // Xu ly su kien click
@@ -49,7 +54,7 @@ public class Continue extends AppCompatActivity {
                 SharedPreferences prefs = getSharedPreferences("game_data", MODE_PRIVATE);
                 bestScore = prefs.getInt("best_score", 0);
 
-                // 🔹 So sánh và cập nhật nếu điểm mới cao hơn
+                // So sánh và cập nhật nếu điểm mới cao hơn
                 if (score > bestScore) {
                     bestScore = score;
                     SharedPreferences.Editor editor = prefs.edit();

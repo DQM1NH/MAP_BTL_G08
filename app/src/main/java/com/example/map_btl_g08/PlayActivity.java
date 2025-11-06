@@ -1,6 +1,7 @@
 package com.example.map_btl_g08;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.CountDownTimer;
@@ -24,6 +25,7 @@ public class PlayActivity extends AppCompatActivity {
 //    Button startBtn;
     int score = 0;
     int currentMole = -1;
+    int bestScore;
     Handler handler = new Handler();
     private Runnable moleRunnable;
 
@@ -33,15 +35,16 @@ public class PlayActivity extends AppCompatActivity {
 
     CountDownTimer countDownTimer;
     boolean isPlaying = false;
+    private boolean hasContinued = false;
     private Random random = new Random();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
-        // Anh xa id
+
+        // Ánh xạ view
         tvScore = findViewById(R.id.tvScore);
         tvTimer = findViewById(R.id.tvTimer);
-
 
         moles = new ImageView[]{
                 findViewById(R.id.moleTop1),
@@ -55,7 +58,26 @@ public class PlayActivity extends AppCompatActivity {
                 findViewById(R.id.moleBottom3)
         };
 
-        // Gan su kien click cho tung mole
+        // Lấy dữ liệu khi người chơi chọn “Continue”
+        Intent intent = getIntent();
+        int scoreContinue = intent.getIntExtra("score_continue", 0);
+        long timeContinue = intent.getLongExtra("time_continue", 0);
+        boolean isContinue = intent.getBooleanExtra("is_continue", false);
+
+        if (scoreContinue > 0) {
+            score = scoreContinue;
+        }
+        if (timeContinue > 0) {
+            gameDurationMs = timeContinue;
+        }
+        if (isContinue) {
+            hasContinued = true;
+        }
+
+        updateScore();
+        tvTimer.setText((gameDurationMs / 1000) + "s");
+
+        // Sự kiện bấm vào chuột
         for (int i = 0; i < moles.length; i++) {
             int index = i;
             moles[i].setOnClickListener(v -> {
@@ -68,13 +90,12 @@ public class PlayActivity extends AppCompatActivity {
             });
         }
 
-        updateScore();
         startGame();
-        tvTimer.setText((gameDurationMs / 1000) + "s");
     }
     public void startGame() {
-        score = 0;
-        updateScore();
+        if (score == 0) {
+            updateScore();
+        }
 
         moleInterval = initialInterval;
         isPlaying = true;
@@ -171,23 +192,63 @@ public class PlayActivity extends AppCompatActivity {
     }
 
     public void updateScore() {
-
         tvScore.setText(String.valueOf(score));
     }
 
     public void showGameOverDialog() {
-        // Khai bao Intent
-        Intent callContinue = new Intent(PlayActivity.this, Continue.class);
-        // lay du lieu score
-        int score = Integer.parseInt(tvScore.getText().toString());
-        // Dong goi du lieu vao Bundle
-        Bundle myscore = new Bundle();
-        // Dua du lieu vaom Bundle
-        myscore.putInt("score", score);
-        // Dua bundle vao Intent
-        callContinue.putExtra("mypackage", myscore);
-        // Khoi dong
-        startActivity(callContinue);
+        if (!hasContinued) {
+            // Khai bao Intent
+            Intent callContinue = new Intent(PlayActivity.this, Continue.class);
+            // lay du lieu score
+            int score = Integer.parseInt(tvScore.getText().toString());
+            // Dong goi du lieu vao Bundle
+            Bundle myscore = new Bundle();
+            // Dua du lieu vaom Bundle
+            myscore.putInt("score", score);
+            // Dua bundle vao Intent
+            callContinue.putExtra("mypackage", myscore);
+            // Khoi dong
+            startActivity(callContinue);
+        }else{
+            SharedPreferences prefs = getSharedPreferences("game_data", MODE_PRIVATE);
+            bestScore = prefs.getInt("best_score", 0);
+
+            // So sánh và cập nhật nếu điểm mới cao hơn
+            if (score > bestScore) {
+                bestScore = score;
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putInt("best_score", bestScore);
+                editor.apply();
+                // Khai bao Intent
+                Intent myIntent_No = new Intent(PlayActivity.this, Best_Score.class);
+                // lay du lieu score
+                int bestscore_1 = bestScore;
+                // Dong goi du lieu vao Bundle
+                Bundle myscore_1 = new Bundle();
+                Bundle mybestScore_1 = new Bundle();
+                // Dua du lieu vao Bundle
+                myscore_1.putInt("bestscore", bestscore_1);
+                // Dua bundle vao Intent
+                myIntent_No.putExtra("mypackage", myscore_1);
+                // Khoi dong
+                startActivity(myIntent_No);
+            }else{
+                // Khai bao Intent
+                Intent myIntent_No = new Intent(PlayActivity.this, End_game.class);
+                // lay du lieu score
+                int score_1 = score;
+                int bestscore_1 = bestScore;
+                // Dong goi du lieu vao Bundle
+                Bundle myscore_1 = new Bundle();
+                // Dua du lieu vaom Bundle
+                myscore_1.putInt("score", score_1);
+                myscore_1.putInt("bestscore", bestscore_1);
+                // Dua bundle vao Intent
+                myIntent_No.putExtra("mypackage", myscore_1);
+                // Khoi dong
+                startActivity(myIntent_No);
+            }
+        }
     }
 
     @Override
