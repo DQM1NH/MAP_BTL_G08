@@ -90,6 +90,38 @@ public class PlayActivity extends AppCompatActivity {
             });
         }
 
+        // Kiem tra neu co save game truoc do
+        SharedPreferences prefs = getSharedPreferences("game_save", MODE_PRIVATE);
+        boolean wasPlaying = prefs.getBoolean("isPlaying", false);
+
+        if (wasPlaying) {
+            // Co tien trinh cu -> khoi phuc
+            score = prefs.getInt("score", 0);
+            gameDurationMs = prefs.getLong("timeLeft", 60000);
+            hasContinued = prefs.getBoolean("hasContinued", false);
+
+            updateScore();
+            tvTimer.setText((gameDurationMs / 1000) + "s");
+
+            // Hoi nguoi choi co muon tiep tuc khong
+            new android.app.AlertDialog.Builder(this)
+                    .setTitle("Tiep tuc choi?")
+                    .setMessage("Ban co muon tiep tuc choi?")
+                    .setPositiveButton("Co", (dialog, which) -> {
+                        startGame(); // tiep tuc
+                    })
+                    .setNegativeButton("Khong", (dialog, which) -> {
+                        clearSavedGame(); // xoa save
+                        score = 0;
+                        gameDurationMs = 60000;
+                        updateScore();
+                        tvTimer.setText("60s");
+                        startGame(); // choi moi
+                    })
+                    .setCancelable(false)
+                    .show();
+            return;
+        }
         startGame();
     }
     public void startGame() {
@@ -196,6 +228,7 @@ public class PlayActivity extends AppCompatActivity {
     }
 
     public void showGameOverDialog() {
+        clearSavedGame();
         if (!hasContinued) {
             // Khai bao Intent
             Intent callContinue = new Intent(PlayActivity.this, Continue.class);
@@ -250,11 +283,35 @@ public class PlayActivity extends AppCompatActivity {
             }
         }
     }
+    public void saveGameState(long timeLeftMs){
+        SharedPreferences prefs = getSharedPreferences("game_save", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("score", score);
+        editor.putLong("timeLeft", timeLeftMs);
+        editor.putBoolean("isPlaying", isPlaying);
+        editor.putBoolean("hasContinued", hasContinued);
+        editor.apply();
+    }
+    public void clearSavedGame() {
+        SharedPreferences prefs = getSharedPreferences("game_save", MODE_PRIVATE);
+        prefs.edit().clear().apply();
+    }
 
     @Override
     protected void onPause() {
         super.onPause();
-        if (isPlaying) stopGame();
+        if (isPlaying && countDownTimer != null) {
+            countDownTimer.cancel();
+            long currentTimeLeft = 0;
+            try {
+                String timeText = tvTimer.getText().toString().replace("s", "");
+                currentTimeLeft = Long.parseLong(timeText) * 1000;
+            } catch (Exception e) {
+                currentTimeLeft = 0;
+            }
+            saveGameState(currentTimeLeft);
+        }
+        stopMoleSpawner();
     }
 
     @Override
