@@ -112,11 +112,44 @@ public class PlayActivity extends AppCompatActivity {
                     })
                     .setNegativeButton("Khong", (dialog, which) -> {
                         clearSavedGame(); // xoa save
-                        score = 0;
-                        gameDurationMs = 60000;
-                        updateScore();
-                        tvTimer.setText("60s");
-                        startGame(); // choi moi
+                        SharedPreferences prefs1 = getSharedPreferences("game_data", MODE_PRIVATE);
+                        bestScore = prefs1.getInt("best_score", 0);
+
+                        // So sánh và cập nhật nếu điểm mới cao hơn
+                        if (score > bestScore) {
+                            bestScore = score;
+                            SharedPreferences.Editor editor = prefs1.edit();
+                            editor.putInt("best_score", bestScore);
+                            editor.apply();
+                            // Khai bao Intent
+                            Intent myIntent_No = new Intent(PlayActivity.this, Best_Score.class);
+                            // lay du lieu score
+                            int bestscore_1 = bestScore;
+                            // Dong goi du lieu vao Bundle
+                            Bundle myscore_1 = new Bundle();
+                            Bundle mybestScore_1 = new Bundle();
+                            // Dua du lieu vao Bundle
+                            myscore_1.putInt("bestscore", bestscore_1);
+                            // Dua bundle vao Intent
+                            myIntent_No.putExtra("mypackage", myscore_1);
+                            // Khoi dong
+                            startActivity(myIntent_No);
+                        }else{
+                            // Khai bao Intent
+                            Intent myIntent_No = new Intent(PlayActivity.this, End_game.class);
+                            // lay du lieu score
+                            int score_1 = score;
+                            int bestscore_1 = bestScore;
+                            // Dong goi du lieu vao Bundle
+                            Bundle myscore_1 = new Bundle();
+                            // Dua du lieu vaom Bundle
+                            myscore_1.putInt("score", score_1);
+                            myscore_1.putInt("bestscore", bestscore_1);
+                            // Dua bundle vao Intent
+                            myIntent_No.putExtra("mypackage", myscore_1);
+                            // Khoi dong
+                            startActivity(myIntent_No);
+                        }
                     })
                     .setCancelable(false)
                     .show();
