@@ -6,17 +6,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.CountDownTimer;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.Random;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class PlayActivity extends AppCompatActivity {
     ImageView[] moles;
@@ -36,7 +29,7 @@ public class PlayActivity extends AppCompatActivity {
     CountDownTimer countDownTimer;
     boolean isPlaying = false;
     private boolean hasContinued = false;
-    private Random random = new Random();
+    final Random random = new Random();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
