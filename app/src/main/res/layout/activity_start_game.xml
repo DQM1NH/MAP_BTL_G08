@@ -73,7 +73,7 @@
         android:layout_height="54dp"
         android:layout_gravity="center"
         android:backgroundTint="#FFB74D"
-        android:text="Play"
+        android:text="Bắt đầu"
         android:textSize="30sp" />
 
     <Button
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="#03A9F4"
-        android:text="Tutorial"
+        android:text="Hướng dẫn"
         android:textSize="30sp"/>
     <RelativeLayout
         android:layout_width="match_parent"

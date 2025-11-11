@@ -70,7 +70,7 @@ public class PlayActivity extends AppCompatActivity {
         updateScore();
         tvTimer.setText((gameDurationMs / 1000) + "s");
 
-        // Sự kiện bấm vào chuột
+        // Su kien click trung chuot
         for (int i = 0; i < moles.length; i++) {
             int index = i;
             moles[i].setOnClickListener(v -> {
@@ -98,17 +98,17 @@ public class PlayActivity extends AppCompatActivity {
 
             // Hoi nguoi choi co muon tiep tuc khong
             new android.app.AlertDialog.Builder(this)
-                    .setTitle("Tiep tuc choi?")
-                    .setMessage("Ban co muon tiep tuc choi?")
-                    .setPositiveButton("Co", (dialog, which) -> {
+                    .setTitle("Bạn có 1 lượt chơi chưa hoàn thành?")
+                    .setMessage("Ban có muốn tiếp tục chơi không?")
+                    .setPositiveButton("Có", (dialog, which) -> {
                         startGame(); // tiep tuc
                     })
-                    .setNegativeButton("Khong", (dialog, which) -> {
+                    .setNegativeButton("Không", (dialog, which) -> {
                         clearSavedGame(); // xoa save
                         SharedPreferences prefs1 = getSharedPreferences("game_data", MODE_PRIVATE);
                         bestScore = prefs1.getInt("best_score", 0);
 
-                        // So sánh và cập nhật nếu điểm mới cao hơn
+                        // So sanh va cap nhat neu diem moi cao hon
                         if (score > bestScore) {
                             bestScore = score;
                             SharedPreferences.Editor editor = prefs1.edit();
