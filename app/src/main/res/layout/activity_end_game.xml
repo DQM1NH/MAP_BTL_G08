@@ -10,7 +10,7 @@
     tools:context=".End_game">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="125dp">
     </RelativeLayout>
 
     <TextView
@@ -76,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#FFB74D"
-        android:text="Chơi lại"
+        android:text="Bắt đầu lại"
         android:textSize="30dp"
         android:textAlignment="center"
         android:layout_gravity="center"/>
