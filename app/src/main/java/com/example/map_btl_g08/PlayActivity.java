@@ -15,10 +15,12 @@ public class PlayActivity extends AppCompatActivity {
     ImageView[] moles;
     TextView tvScore;
     TextView tvTimer;
+    ImageView imgSetting;
 //    Button startBtn;
     int score = 0;
     int currentMole = -1;
     int bestScore;
+    TextView tvTime;
     Handler handler = new Handler();
     private Runnable moleRunnable;
 
@@ -38,6 +40,8 @@ public class PlayActivity extends AppCompatActivity {
         // Anh xa view
         tvScore = findViewById(R.id.tvScore);
         tvTimer = findViewById(R.id.tvTimer);
+        imgSetting = findViewById(R.id.btnSettings);
+        tvTime = findViewById(R.id.tvTimer);
 
         moles = new ImageView[]{
                 findViewById(R.id.moleTop1),
@@ -51,21 +55,49 @@ public class PlayActivity extends AppCompatActivity {
                 findViewById(R.id.moleBottom3)
         };
 
+        imgSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callSetting = new Intent(PlayActivity.this, SettingActivity.class);
+
+//                int score = Integer.parseInt(tvScore.getText().toString());
+//                int time = Integer.parseInt(tvTime.getText().toString());
+//
+//                // Dong goi du lieu vao Bundle
+//                Bundle myscore = new Bundle();
+//                // Dua du lieu vaom Bundle
+//                myscore.putInt("score", score);
+//                myscore.putInt("time", time);
+//                // Dua bundle vao Intent
+//                callSetting.putExtra("mypackage", myscore);
+                // Khoi dong
+                startActivity(callSetting);
+            }
+        });
+
         // Lấy dữ liệu khi người chơi chọn “Continue”
         Intent intent = getIntent();
+        boolean isReplay = intent.getBooleanExtra("is_replay", false);
         int scoreContinue = intent.getIntExtra("score_continue", 0);
         long timeContinue = intent.getLongExtra("time_continue", 0);
         boolean isContinue = intent.getBooleanExtra("is_continue", false);
 
-        if (scoreContinue > 0) {
-            score = scoreContinue;
+        if(isReplay){
+            score = 0;
+            gameDurationMs = 60000;
+            hasContinued = false;
+        }else{
+            if (scoreContinue > 0) {
+                score = scoreContinue;
+            }
+            if (timeContinue > 0) {
+                gameDurationMs = timeContinue;
+            }
+            if (isContinue) {
+                hasContinued = true;
+            }
         }
-        if (timeContinue > 0) {
-            gameDurationMs = timeContinue;
-        }
-        if (isContinue) {
-            hasContinued = true;
-        }
+
 
         updateScore();
         tvTimer.setText((gameDurationMs / 1000) + "s");
@@ -77,6 +109,7 @@ public class PlayActivity extends AppCompatActivity {
                 if (isPlaying && index == currentMole && moles[index].getVisibility() == View.VISIBLE) {
                     score++;
                     updateScore();
+                    updateSpeed();
                     hideMole(index);
                     currentMole = -1;
                 }
@@ -251,6 +284,13 @@ public class PlayActivity extends AppCompatActivity {
 
     public void updateScore() {
         tvScore.setText(String.valueOf(score));
+    }
+
+    public void updateSpeed(){
+        if(score % 10 == 0){
+            int time = score / 10;
+            moleInterval = (long) (moleInterval - (100 * time));
+        }
     }
 
     public void showGameOverDialog() {
