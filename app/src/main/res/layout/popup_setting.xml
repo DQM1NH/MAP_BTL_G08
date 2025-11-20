@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".SettingActivity"
     android:gravity="center"
-    android:background="@drawable/bg_game">
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:id="@+id/settingBox"

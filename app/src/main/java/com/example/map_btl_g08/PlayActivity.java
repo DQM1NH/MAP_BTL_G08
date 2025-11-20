@@ -1,11 +1,13 @@
 package com.example.map_btl_g08;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.Random;
@@ -55,24 +57,9 @@ public class PlayActivity extends AppCompatActivity {
                 findViewById(R.id.moleBottom3)
         };
 
-        imgSetting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent callSetting = new Intent(PlayActivity.this, SettingActivity.class);
-
-//                int score = Integer.parseInt(tvScore.getText().toString());
-//                int time = Integer.parseInt(tvTime.getText().toString());
-//
-//                // Dong goi du lieu vao Bundle
-//                Bundle myscore = new Bundle();
-//                // Dua du lieu vaom Bundle
-//                myscore.putInt("score", score);
-//                myscore.putInt("time", time);
-//                // Dua bundle vao Intent
-//                callSetting.putExtra("mypackage", myscore);
-                // Khoi dong
-                startActivity(callSetting);
-            }
+        imgSetting.setOnClickListener(v -> {
+            openSettingDialog();
+            stopGame();
         });
 
         // Lấy dữ liệu khi người chơi chọn “Continue”
@@ -363,6 +350,48 @@ public class PlayActivity extends AppCompatActivity {
         prefs.edit().clear().apply();
     }
 
+    public void openSettingDialog() {
+        Dialog dialog = new Dialog(PlayActivity.this);
+        dialog.setContentView(R.layout.popup_setting);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        dialog.setCancelable(false);
+
+        ImageView btnClose = dialog.findViewById(R.id.btnClose);
+        Button btnHome = dialog.findViewById(R.id.btnHome);
+        Button btnReplay = dialog.findViewById(R.id.btnReplay);
+        Button btnExit = dialog.findViewById(R.id.btnExit);
+
+        btnClose.setOnClickListener(v -> {
+            dialog.dismiss();
+            resumeGame();
+        });
+
+        btnHome.setOnClickListener(v -> {
+            dialog.dismiss();
+            finish();
+            startActivity(new Intent(this, Start_Game.class));
+        });
+
+        btnReplay.setOnClickListener(v -> {
+            dialog.dismiss();
+            Intent i = new Intent(this, PlayActivity.class);
+            i.putExtra("is_replay", true);
+            startActivity(i);
+            finish();
+        });
+        btnExit.setOnClickListener(v -> {
+            moveTaskToBack(true);
+        });
+
+        dialog.show();
+    }
+
+    private void resumeGame() {
+        isPlaying = true;
+        startTimer();
+        startMoleSpawner();
+    }
+    
     @Override
     protected void onPause() {
         super.onPause();
