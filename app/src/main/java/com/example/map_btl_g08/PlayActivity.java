@@ -26,6 +26,16 @@ public class PlayActivity extends AppCompatActivity {
     Handler handler = new Handler();
     private Runnable moleRunnable;
 
+    private static final int SCORE_MOLE = 1;
+    private static final int SCORE_MOLE_2 = 2;
+    private static final int SCORE_MOLE_3 = 5;
+    private static final int SCORE_BOMB = -10;
+
+    private static final int DRAWABLE_MOLE_1 = R.drawable.ic_mole;
+    private static final int DRAWABLE_MOLE_2 = R.drawable.ic_mole_2;
+    private static final int DRAWABLE_MOLE_3 = R.drawable.ic_mole_3;
+    private static final int DRAWABLE_BOMB = R.drawable.ic_bomb;
+
     long gameDurationMs = 60000;   // 60s
     long initialInterval = 1500;    // tốc độ ban đầu (ms)
     long moleInterval = initialInterval;
@@ -94,7 +104,9 @@ public class PlayActivity extends AppCompatActivity {
             int index = i;
             moles[i].setOnClickListener(v -> {
                 if (isPlaying && index == currentMole && moles[index].getVisibility() == View.VISIBLE) {
-                    score++;
+                    Object tag = v.getTag();
+                    int itemScore = (tag instanceof Integer) ? (Integer) tag : SCORE_MOLE;
+                    score += itemScore;
                     updateScore();
                     updateSpeed();
                     hideMole(index);
@@ -219,12 +231,49 @@ public class PlayActivity extends AppCompatActivity {
         }.start();
     }
 
-    public void startMoleSpawner() {
+    public void startMoleSpawner()  {
         moleRunnable = new Runnable() {
             @Override
             public void run() {
                 if (!isPlaying) return;
-                showRandomMole();
+
+                if (currentMole != -1) {
+                    moles[currentMole].setVisibility(View.INVISIBLE);
+                }
+
+                int newItemIndex = random.nextInt(moles.length);
+                currentMole = newItemIndex;
+
+                int itemDrawableId;
+                int itemScore;
+
+                int randomChoice = random.nextInt(100);
+
+                if (randomChoice < 40) {
+                    itemDrawableId = DRAWABLE_MOLE_1;
+                    itemScore = SCORE_MOLE;
+                } else if (randomChoice < 70) {
+                    itemDrawableId = DRAWABLE_MOLE_2;
+                    itemScore = SCORE_MOLE_2;
+                } else if (randomChoice < 90) {
+                    itemDrawableId = DRAWABLE_MOLE_3;
+                    itemScore = SCORE_MOLE_3;
+                } else {
+                    itemDrawableId = DRAWABLE_BOMB;
+                    itemScore = SCORE_BOMB;
+                }
+
+                moles[newItemIndex].setImageResource(itemDrawableId);
+                moles[newItemIndex].setTag(itemScore);
+                moles[newItemIndex].setVisibility(View.VISIBLE);
+
+                handler.postDelayed(() -> {
+                    if (currentMole == newItemIndex) {
+                        hideMole(newItemIndex);
+                        currentMole = -1;
+                    }
+                }, Math.max(moleInterval / 2, 1000));
+
                 handler.postDelayed(this, moleInterval);
             }
         };
@@ -274,10 +323,8 @@ public class PlayActivity extends AppCompatActivity {
     }
 
     public void updateSpeed(){
-        if(score % 10 == 0){
-            int time = score / 10;
-            moleInterval = (long) (moleInterval - (100 * time));
-        }
+        int time = score / 20;
+        moleInterval = (long) (moleInterval - (100 * time));
     }
 
     public void showGameOverDialog() {
