@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_game"
+    android:orientation="vertical"
+    tools:context=".Splash_Screen_Activity">
+
+    <TextView
+        android:id="@+id/tvWhack"
+        android:layout_width="365dp"
+        android:layout_height="86dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:text="WHACK"
+        android:textAlignment="center"
+        android:textColor="#FF9800"
+        android:textSize="70sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvAMole"
+        android:layout_width="wrap_content"
+        android:layout_height="77dp"
+        android:layout_gravity="center"
+        android:text=" A MOLE"
+        android:textAlignment="center"
+        android:textColor="#FF9800"
+        android:textSize="70sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:paddingTop="25dp">
+
+        <ImageView
+            android:id="@+id/imgHo"
+            android:layout_width="409dp"
+            android:layout_height="226dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="-3dp"
+            android:src="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/imgChuot"
+            android:layout_width="wrap_content"
+            android:layout_height="181dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="48dp"
+            android:paddingTop="45dp"
+            android:src="@drawable/ic_mole" />
+
+        <ImageView
+            android:id="@+id/img_hammer"
+            android:layout_width="178dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="45dp"
+            app:srcCompat="@drawable/ic_hammer" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvMembers"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:text="Nhóm 8: Lập trình game\n            Thành viên: Đặng Quang Minh \n                                  Lưu Quang Hoàng\n
+                            Nguyễn Đức Tài\n                                     Hoàng Quang Được\n"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

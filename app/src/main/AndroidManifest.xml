@@ -12,14 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MAP_BTL_G08">
         <activity
-            android:name=".SettingActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ExitActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ProfileListActivity"
-            android:exported="false" />
+            android:name=".Splash_Screen_Activity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+<!--        <activity-->
+<!--            android:name=".SettingActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".ExitActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".ProfileListActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".PlayActivity"
             android:exported="false" />
@@ -40,13 +49,7 @@
             android:exported="false" />
         <activity
             android:name=".Start_Game"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"/>
     </application>
 
 </manifest>
