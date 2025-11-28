@@ -18,6 +18,8 @@ public class Tutorial extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
         btnClose = findViewById(R.id.btn_Exit);
+        // Load lich su
+        HistoryManager.addHistory(this, "Tutorial");
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,5 +27,6 @@ public class Tutorial extends AppCompatActivity {
                 finish();
             }
         });
+
     }
 }

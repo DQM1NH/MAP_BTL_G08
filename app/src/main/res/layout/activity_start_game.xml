@@ -83,6 +83,16 @@
         android:backgroundTint="#03A9F4"
         android:text="Hướng dẫn"
         android:textSize="30sp"/>
+
+    <Button
+        android:id="@+id/btnHistory"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Lịch sử"
+        android:textSize="30dp"
+        android:visibility="invisible"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="45dp">

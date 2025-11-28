@@ -27,6 +27,9 @@ public class End_game extends AppCompatActivity {
         btnPlayAgain = findViewById(R.id.btnPlayagain);
         tvScore_1 = findViewById(R.id.tvScore_1);
         tvBestScore_1 = findViewById(R.id.tvBestScore_1);
+
+        // Load lich su
+        HistoryManager.addHistory(this, "End_Game");
         // Nhan Intent
         Intent myIntent = getIntent();
         // Lay bundel ra khoi Intent

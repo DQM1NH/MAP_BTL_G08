@@ -15,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class Start_Game extends AppCompatActivity {
     Button btnPlay;
     Button btnTutorial;
+    Button btnHistory;
     TextView tvPrivacy;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,11 @@ public class Start_Game extends AppCompatActivity {
         // anh xa id
         btnPlay = findViewById(R.id.btnPlay);
         btnTutorial = findViewById(R.id.btnTutorial);
+        btnHistory = findViewById(R.id.btnHistory);
         tvPrivacy = findViewById(R.id.tvPricacy);
+
+        // Load lich su
+        HistoryManager.addHistory(this, "StartGame");
         // Xu ly su kien cho button
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +48,15 @@ public class Start_Game extends AppCompatActivity {
                 Intent myTutorial = new Intent(Start_Game.this, Tutorial.class);
                 // Khoi dong
                 startActivity(myTutorial);
+            }
+        });
+        btnHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Khai bao Intent
+                Intent myIntent = new Intent(Start_Game.this, History_Activity.class);
+                // Khoi dong Intent
+                startActivity(myIntent);
             }
         });
 

@@ -22,6 +22,9 @@ public class Best_Score extends AppCompatActivity {
         // anh xa id
         btnPlayAgain = findViewById(R.id.btnPlayagain);
         tvBestScore_1 = findViewById(R.id.tvBestScore_1);
+
+        // Load lich su
+        HistoryManager.addHistory(this, "Best_Score");
         // Nhan Intent
         Intent myIntent = getIntent();
         // Lay bundel ra khoi Intent

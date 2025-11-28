@@ -23,6 +23,9 @@ public class Continue extends AppCompatActivity {
         // anh xa id
         btnYes = findViewById(R.id.btnYes);
         btnNo = findViewById(R.id.btnNo);
+
+        // Load lich su
+        HistoryManager.addHistory(this, "Continue");
         // Nhan Intent
         Intent myIntent = getIntent();
         // Lay bundel ra khoi Intent

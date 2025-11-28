@@ -55,6 +55,9 @@ public class PlayActivity extends AppCompatActivity {
         imgSetting = findViewById(R.id.btnSettings);
         tvTime = findViewById(R.id.tvTimer);
 
+        // Load lich su
+        HistoryManager.addHistory(this, "PlayActivity");
+
         moles = new ImageView[]{
                 findViewById(R.id.moleTop1),
                 findViewById(R.id.moleTop2),

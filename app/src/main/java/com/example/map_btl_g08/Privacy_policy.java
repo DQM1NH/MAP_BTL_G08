@@ -22,6 +22,8 @@ public class Privacy_policy extends AppCompatActivity {
         btnClose = findViewById(R.id.btnClose);
         tvPrivacy = findViewById(R.id.tvPrivacy_first);
         tvPrivacy.setText(getString(R.string.text_privacy));
+        // Load lich su
+        HistoryManager.addHistory(this, "Privacy_policy");
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -16,11 +16,8 @@ public class Splash_Screen_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        // Load lich su
+        HistoryManager.addHistory(this, "Splash_Sceen_Activity");
 
         new Handler().postDelayed(() -> {
             Intent intent = new Intent(Splash_Screen_Activity.this, Start_Game.class);
